@@ -19,7 +19,7 @@ const SalesPerformance: React.FC<SalesPerformanceProps> = ({ transactions }) => 
       acc[date].profit += t.grossProfit;
     }
     return acc;
-  }, {} as Record<string, any>);
+  }, {} as Record<string, { date: string; buyVolume: number; sellVolume: number; profit: number }>);
 
   const chartData = Object.values(dailyDataMap).sort((a, b) => a.date.localeCompare(b.date));
 
